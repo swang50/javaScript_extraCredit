@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript Problems</title>
+</head>
+<body>
+    <h1>JavaScript Problems</h1>
+    <button onclick="All()">Start!</button>
+
+    <script>
+        function problem1() {
+            let result = "Counting down: ";
+            for (let i = 40; i >= 10; i -= 2) {
+                result += i + " ";
+            }
+            alert(result);
+        }
+
+        function problem2() {
+            let sum = 0;
+            while (sum <= 20) {
+                let num = Number(prompt("Enter a number:"));
+                if (!isNaN(num)) {
+                    sum += num;
+                }
+            }
+            alert("Sum exceeded 20. Final sum: " + sum);
+        }
+
+        function problem3() {
+            let sum = 0;
+            let numbers = [];
+            while (sum <= 20) {
+                let num = Number(prompt("Enter a number:"));
+                if (!isNaN(num)) {
+                    sum += num;
+                    numbers.push(num);
+                }
+            }
+            alert("Numbers entered: " + numbers.join(", "));
+        }
+
+        function problem4() {
+            let songs = [
+                { title: "Fancy Things", artist: "The Weepies" },
+                { title: "Messy", artist: "Lola Young" },
+                { title: "Good Luck, Babe!", artist: "Chappell Roan" },
+                { title: "Business Solutions", artist: "JORDANN" },
+                { title: "Miss Riddle", artist: "Boz Scaggs" }
+            ];
+
+            let output = "Songs and their artists:\n";
+            songs.forEach(function(song) {
+                output += song.title + " - " + song.artist + "\n";
+            });
+            alert(output);
+        }
+
+        function problem5() {
+            let songs = [
+                { title: "Fancy Things", artist: "The Weepies" },
+                { title: "Messy", artist: "Lola Young" },
+                { title: "Good Luck, Babe!", artist: "Chappell Roan" },
+                { title: "Business Solutions", artist: "JORDANN" },
+                { title: "Miss Riddle", artist: "Boz Scaggs" }
+            ];
+
+            let band = prompt("Enter a band/artist name:");
+            let output = "Songs by " + band + ":\n";
+            let foundSongs = songs.filter(function(song) {
+                return song.artist === band;
+            });
+            
+            if (foundSongs.length === 0) {
+                alert("No songs found.");
+            } else {
+                foundSongs.forEach(function(song) {
+                    output += song.title + "\n";
+                });
+                alert(output);
+            }
+        }
+
+        function All() {
+            problem1();
+            problem2();
+            problem3();
+            problem4();
+            problem5();
+        }
+    </script>
+</body>
+</html>
